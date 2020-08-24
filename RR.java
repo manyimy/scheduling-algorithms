@@ -52,13 +52,11 @@ public class RR{
         for(int j = 0; j < numProcess; j++) {
           if(p[j].getArrival() <= current && !order.contains(j)) {
             order.add(j);
-            System.out.println("Added " + j + " to order in line 52");
           }
         }
         if(now != -1) { // add now to order list if not equal to -1
           order.add(now);
         }
-        System.out.println(order);
         if(!order.isEmpty()) {  // order list is not empty
           now = order.get(seq++);
           if(p[now].getTempBurst() > quant) {   // burst time left more than quantum time
